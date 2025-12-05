@@ -1,0 +1,161 @@
+html{
+    overflow-y: scroll;
+}
+
+body 
+{
+    margin: 0;
+    background-color: #000000;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(../Photos/bakgrunn.png);
+    background-attachment:fixed;
+    background-size: cover;
+    color: #000000;
+    overflow-x: hidden; 
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*TEKST*/
+
+h1
+{
+    color:#000000;
+    text-align: center;
+}
+
+#mail_tel
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#SogM
+{
+    width: 100%;
+}
+
+/* HEADER*/
+header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+nav
+{
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 7px;
+    padding: 3px;
+    width: 50%;
+    margin-top: 1%;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*BUTTONS*/
+
+.header_button
+{
+    background-color: rgba(200, 200, 200, 0.2);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+
+    border: none;
+    width: 10vh;
+    height: 3vh;
+    font-size: 15px;
+
+    padding: 2px;
+    place-items: center;
+    gap: 20%;
+}
+
+
+.header_button:hover
+{
+    opacity: 50%;
+    cursor: pointer;
+}
+
+
+/*TEKSTBOKS*/
+
+.høyre_textbox
+{
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+    margin-left: 40%;
+    margin-top: 6%;
+    backdrop-filter: blur(10px);
+}
+
+.venstre_textbox
+{
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+    margin-left: 6%;
+    margin-top: 6%;
+    backdrop-filter: blur(10px);
+}
+
+.midt_textbox
+{
+    text-align: center;
+    background-color: rgba(200, 200, 200, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+    margin: 5% auto 5% auto;
+    backdrop-filter: blur(10px);
+}
+
+#topp
+{
+    color:#ffffff;
+}
+
+
+
+footer {
+  background: rgba(0,0,0,0.5);
+  border-top: 1px solid rgba(0,0,0,1);
+  padding: 0.000001%;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: 50px;
+}
+
+
+
+/* COMPATIBLE */
+
+@media(max-width:768px)
+{
+    .header_button 
+    {
+        width: 20%;
+        height: 20%;
+        font-weight: bold;
+    }
+}
+
