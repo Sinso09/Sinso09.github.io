@@ -1,8 +1,8 @@
 :root 
 {
 --headerbar: #000000;
---tekstboks: rgba(100, 100, 100, 0.216);
---header_buttons: rgb(30, 30, 30);
+--tekstboks: rgba(255, 255, 255, 0.216);
+--header_buttons: rgba(203, 203, 203, 0.127);
 --header_buttons_text: rgb(223, 223, 223);
 --footer: ;
 --footer_text: ;
@@ -72,7 +72,7 @@ h1
 
 #logo-header
 {
-    width: 5vh;
+    width: 6vh;
     height: 5vh;
 }
 
@@ -129,7 +129,7 @@ nav
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     place-items: center;
-    font-size: 120%;
+    font-size: 3vh;
 }
 
 
@@ -157,17 +157,10 @@ nav
 
 /*TEKSTBOKS*/
 
-.index_textbox 
+#index_tree
 {
-    background-color: rgba(255, 255, 255, 0.208);
-    color: #dfdfdf;
-    padding: 2rem;
-    margin-top: 4rem;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    border: 1px solid rgb(255, 255, 255);
-    box-sizing: border-box;
+    background-image: url(/Photos/Good_Photos/Sindre_tree.jpg);
+    width: 40%;
 }
 
 
@@ -230,13 +223,10 @@ nav
 
 footer 
 {
-    background: var(--headerbar);
+    background-color: var(--headerbar);
     color: var(--header_buttons_text);
-    padding: 0;
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
     margin-top: auto;
+    text-align: center;
 }
 
 
@@ -244,28 +234,10 @@ footer
 
 
 
-/* COMPATIBLE WITH PHONE / PAD */
+/*  ..........  COMPATIBLE WITH PHONE   ..............   */
 
 @media(max-width:760px)
 {
-    #container 
-    {
-        margin-top: 23rem;
-        margin-left: 80%;
-        background-color: var(--headerbar);
-        position: absolute;
-        z-index: 6;
-        display: flex;
-        flex-direction: column;
-    }
-
-    nav
-    {
-        flex-direction: column;
-        height: 4rem;
-        width: 100%;
-    }
-
     #menu_button 
     {
         background-color: black;
@@ -274,19 +246,40 @@ footer
         justify-content: right;
         text-decoration: none;
         text-align: center;
-        border-radius: 3px;
         border: none;
-        width: 10vh;
-        height: 5vh;
+        width: 6vh;
+        height: 6vh;
         font-size: 15px;
         padding: none;
         place-items: center;
         font-size: 120%;
-        margin-left: 90%;
+        margin-left: 80%;
+    }
+    
+    
+    
+    #container 
+    {
+
+        background-color: var(--headerbar);
+        position: absolute;
+        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 
 
-    /*BUTTONS*/
+
+    nav
+    {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+
 
     .header_button
     {
@@ -296,12 +289,11 @@ footer
         justify-content: center;
         text-decoration: none;
         text-align: center;
-        border-radius: 3px;
+        border-radius: none;
         border: none;
         font-size: 15px;
         padding: 2px;
         place-items: center;
-        gap: 20%;
         z-index: 7;
     }
 }
