@@ -1,12 +1,12 @@
 :root 
 {
---headerbar: #181818;
---tekstboks: rgba(74, 74, 74, 0.249);
+--headerbar: #000000;
+--tekstboks: rgba(100, 100, 100, 0.216);
 --header_buttons: rgb(30, 30, 30);
 --header_buttons_text: rgb(223, 223, 223);
 --footer: ;
 --footer_text: ;
---background_color:#131313;
+--background_color:#151515;
 --tekst: #b7b7b7;
 --link_color: rgb(70,70,255); 
 }
@@ -24,17 +24,17 @@ body
     background-color: var(--background_color);
     color: var(--tekst);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-image: url(../Photos/SS\ Logo\ Black.svg);
+    background-image: url(../Photos/Logo/SS_Logo_Black.svg);
     background-attachment:fixed;
     background-size: cover;
-    
+    background-position: center;
     overflow-x: hidden; 
     overflow-y: auto;
+    overflow: scroll;
     width: 100%;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: scroll;
 }
 
 
@@ -75,6 +75,11 @@ h1
     height: 5vh;
 }
 
+#logo-header:hover
+{
+    opacity: 50%;
+    cursor: pointer;
+}
 
 header
 {
@@ -93,11 +98,11 @@ nav
     justify-content: center;
     width: 100%;
     display: flex;
+    position: relative;
+    z-index: 10;
 }
 
 
-
-/*HEADER-BUTTONS*/
 
 
 #container /*container for buttons */
@@ -119,15 +124,14 @@ nav
     justify-content: center;
     text-decoration: none;
     text-align: center;
-    border-radius: 3px;
-    border: none;
-    width: 10vh;
+    width: 12vh;
     height: 5vh;
-    font-size: 15px;
-    padding: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     place-items: center;
-    font-size: 110%;
+    font-size: 120%;
+
 }
+
 
 
 .header_button:hover
@@ -140,30 +144,7 @@ nav
 
 #menu_button
 {
-    background-color: var(--headerbar);
-    color: var(--header_buttons_text);
-    position: absolute;
-    margin-top: 100%;
-    margin-left: 90%;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 3px;
-    border: none;   
-    font-size: 15px;
-    padding: none;
-    place-items: center;
-    font-size: 110%;
-    gap: 20%;
     display: none;
-    justify-content: center;
-    
-}
-
-
-#menu_button:hover
-{
-    opacity: 50%;
-    cursor: pointer;
 }
 
 
@@ -175,6 +156,18 @@ nav
 
 
 /*TEKSTBOKS*/
+
+.index_textbox 
+{
+    background-color: rgba(255, 255, 255, 0.208);
+    color: #dfdfdf;
+    padding: 2rem;
+    margin-top: 4rem;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
 
 .venstre_textbox
 {
@@ -245,23 +238,18 @@ footer
 }
 
 
-.footer_space
-{
-    height: 100px;
-    width: 100%;
-    opacity: 100%;
-}
+
+
 
 
 /* COMPATIBLE WITH PHONE / PAD */
 
 @media(max-width:760px)
 {
-
     #container 
     {
-        margin-top: 25rem;
-        margin-left: 70%;
+        margin-top: 23rem;
+        margin-left: 80%;
         background-color: var(--headerbar);
         position: absolute;
         z-index: 6;
@@ -272,16 +260,29 @@ footer
     nav
     {
         flex-direction: column;
-        height: 6rem;
+        height: 4rem;
         width: 100%;
-        position: absolute;
     }
 
     #menu_button 
     {
-        margin-top: 3rem;
+        background-color: black;
+        color: var(--header_buttons_text);
         display: block;
+        justify-content: right;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 3px;
+        border: none;
+        width: 10vh;
+        height: 5vh;
+        font-size: 15px;
+        padding: none;
+        place-items: center;
+        font-size: 120%;
+        margin-left: 90%;
     }
+
 
     /*BUTTONS*/
 
@@ -299,6 +300,7 @@ footer
         padding: 2px;
         place-items: center;
         gap: 20%;
+        z-index: 7;
     }
 }
 
