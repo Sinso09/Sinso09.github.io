@@ -10,11 +10,11 @@
 :root 
 {
 --headerbar: #000000;
---tekstboks: rgba(255, 255, 255, 0.216);
 --header_buttons: rgba(203, 203, 203, 0.127);
 --header_buttons_text: rgb(223, 223, 223);
 --background_color:#111111;
---tekst: #b7b7b7;
+--tekstboks: rgba(0, 0, 0, 0.678);
+--tekst: rgb(223, 223, 223);
 --link_color: rgb(70,70,255); 
 }
 
@@ -76,6 +76,12 @@ h1
 
 
 /* HEADER*/
+
+#Mobile_LOGO
+{
+    display: none;
+}
+
 
 #logo-header
 {
@@ -165,6 +171,45 @@ header
 
 
 
+#tree_pic
+{
+    width: 30%;
+    position: relative;
+    margin-left: auto;
+    border-radius: 7px;
+}
+
+
+
+
+
+/*PHOTO BOX*/
+
+
+.Photos {
+    position: relative;
+    display: inline-block;
+}
+
+.Photos img {
+    display: block;
+    width: 30%; /* <<-- CRITICAL: Image always takes up full container width */
+    height: auto; /* <<-- CRITICAL: Maintains aspect ratio */
+}
+
+
+.text-overlay {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%); /* <<-- This ensures perfect centering at any size */
+    
+    /* Other styles */
+    color: white;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 
 
 
@@ -172,11 +217,6 @@ header
 
 /*TEKSTBOKS*/
 
-
-#index_tree
-{
-    background-image: url(/Photos/Good_Photos/Sindre_tree.jpg);
-}
 
 
 .venstre_textbox
@@ -187,10 +227,9 @@ header
     width: 50%;
     margin-left: 6%;
     margin-top: 6%;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     position: relative;
     z-index: 2;
-    font-size: 20px;
 }
 
 .midt_textbox
@@ -253,48 +292,134 @@ footer
 
 @media(max-width:760px){
 
+    /*HEADER PÅ MOBIL*/
 
-  #menu_button
-  {
-    display: block;
-    margin-left: auto;
-    background-color: var(--headerbar);
-    border: none;
-    color: var(--header_buttons_text);
-    font-size: 22px;
-    width: 3rem;
-  }
+    #Mobile_LOGO
+    {
+        display: block;
+        margin-left: 1rem;
+        background-color: var(--headerbar);
+        border: none;
+        color: var(--header_buttons_text);
+        font-size: 22px;
+        width: 3rem;
+    }
+
+    .Mobile__menu
+    {
+        display: flex;         /* Activate Flexbox */
+        flex-direction: row;   /* Keep items in a row */
+        width: 100%;           /* Ensure it takes up all available space in the navbar */
+        align-items: center;   /* Vertically centers the logo and button */
+        justify-content: space-between; /* This distributes space, pushing elements to the edges */
+    }
 
 
-  .navbar
-  {
-    flex-direction: column;
-    height: auto;
-    align-items: flex-start;
-    height: 2rem;
-  }
+    #logo-header
+    {
+        display: none;
+    }
 
 
-  #nav_bar_container
-  {
-    background-color: var(--headerbar);
-    position: absolute;
-    z-index: 15;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    #menu_button
+    {
+        display: block;
+        /* margin-left: auto; Removed this as justify-content handles positioning within the row */
+        background-color: var(--headerbar);
+        border: none;
+        color: var(--header_buttons_text);
+        font-size: 22px;
+        width: 3rem;
+        cursor: pointer;
+    }
 
-    width: 150px;
-    right: 0;
-    top: 6vh;
-    padding: 10px;
+
+    .navbar
+    {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        height: 3rem;
+    }
+
+
+    #nav_bar_container
+    {
+        background-color: var(--headerbar);
+        position: absolute;
+        z-index: 15;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 150px;
+        right: 0;
+        top: 6vh;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+
+    header
+    {
+        position: relative;
+    }
+
+
+    /*TEKSTBOKS PÅ MOBIL*/
+
+    .venstre_textbox
+{
+    background-color: var(--tekstboks);
     border-radius: 6px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
-  }
-
-
-  header
-  {
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 6%;
+    backdrop-filter: blur(20px);
     position: relative;
-  }
+    z-index: 2;
+    font-size: 20px;
+}
+
+.midt_textbox
+{
+    background-color: var(--tekstboks);
+    border-radius: 6px;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 6%;
+    backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+
+.høyre_textbox
+{
+    background-color: var(--tekstboks);
+    border-radius: 6px;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top: 6%;
+    backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+
+
+.kontakt_textbox
+{
+    text-align: center;
+    background-color: var(--tekstboks);
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+    margin: 12% auto;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
 }
