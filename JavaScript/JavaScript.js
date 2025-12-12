@@ -1,4 +1,4 @@
-const Menu = document.getElementById("container")
+const Menu = document.getElementById("nav_bar_container")
 let menu_closed_open =true
 function Open_Close()
 {
